@@ -4,6 +4,7 @@ window.onload = function(){
 			this.$inputtime = document.querySelector("#inputtime");
 			this.$submit = document.querySelector("#submit");
 			this.$outputtime = document.querySelector("#outputtime");
+			this.$err = document.querySelector(".err");
 			this.init();
 		}
 		timeConvert.prototype.init = function() {
@@ -13,22 +14,33 @@ window.onload = function(){
 		}
 		timeConvert.prototype.bindCovert = function() {
 			var _this = this;
-			_this.$submit.addEventListener("click", function(evt){
+			this.$submit.addEventListener("click", function(evt){
 				evt.stopPropagation();
 				evt.preventDefault();
-				if(_this.$inputtime.value.length != 10) {
-					alert("你为什么不输入正确的时间戳呀！！！");
-					return;
-				}
-				if(!_this.$inputtime.value) {
-					alert("你到是输入时间戳呀！！！");
-					return;
-				}
-				var date = new Date(Number(_this.$inputtime.value) * 1000)
-				
-				_this.$outputtime.value = date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate() + "/ " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-
+				_this.renderDate();
 			}, false);
+		}
+		timeConvert.prototype.renderDate = function() {
+			var date;
+			
+			if(this.$inputtime.value.length != 10 && this.$inputtime.value.length != 13) {
+				this.$err.style.display = "inline-block";
+				this.$outputtime.value = '';
+				this.$inputtime.focus();
+				return;
+			}
+
+			if(this.$err.style.display == "inline-block") {
+				this.$err.style.display = "none";	
+			}
+			
+			if(this.$inputtime.value.length == 10) {
+				date = new Date(Number(this.$inputtime.value) * 1000)
+			} else if(this.$inputtime.value.length == 13) {
+				date = new Date(Number(this.$inputtime.value))
+			}
+			
+			this.$outputtime.value = date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate() + "/ " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
 		}
 		timeConvert.prototype.getCurrentTimeStamp = function() {
 			var timeStamp = Math.floor(new Date().getTime() / 1000);
