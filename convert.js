@@ -16,6 +16,10 @@ window.onload = function(){
 			_this.$submit.addEventListener("click", function(evt){
 				evt.stopPropagation();
 				evt.preventDefault();
+				if(_this.$inputtime.value.length != 10) {
+					alert("你为什么不输入正确的时间戳呀！！！");
+					return;
+				}
 				if(!_this.$inputtime.value) {
 					alert("你到是输入时间戳呀！！！");
 					return;
