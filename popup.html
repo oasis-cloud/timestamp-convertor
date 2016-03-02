@@ -15,7 +15,7 @@
 		padding: 20px 10px;
 	}
 	.row{
-		width: 280px;
+		width: 295px;
 		margin: 0 auto;
 	}
 	.row:after{
@@ -47,13 +47,22 @@
 		height: 32px;
 		background: url(./i/convert_32.png) no-repeat center;
 	}
+	.err{
+		display: none;
+		font-size: 14px;
+		line-height: 23px;
+		height: 23px;
+		color: #F00;
+		font-size: bold;
+		margin-left:5px;
+	}
 	</style>
 </head>
 <body>
 	<div class="w">
 		<div class="row">
 			<div class="input-name">Unix时间戳&nbsp;:&nbsp;</div>
-			<div class="input-wrap"><input id="inputtime" type="text" placeholder="输入Unix时间戳" value="" /></div>
+			<div class="input-wrap"><input id="inputtime" type="text" placeholder="输入Unix时间戳" value="" /><span class="err">X</span></div>
 		</div>
 		<div class="row">
 			<div class="input-submit"><input id="submit" type="submit" value="" /></div>
