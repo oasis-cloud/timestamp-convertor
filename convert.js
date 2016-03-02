@@ -23,7 +23,7 @@ window.onload = function(){
 		timeConvert.prototype.renderDate = function() {
 			var date;
 			
-			if(this.$inputtime.value.length != 10 && this.$inputtime.value.length != 13) {
+			if( !/^([0-9]+)$/.test(this.$inputtime.value) || (this.$inputtime.value.length != 10 && this.$inputtime.value.length != 13) ) {
 				this.$err.style.display = "inline-block";
 				this.$outputtime.value = '';
 				this.$inputtime.focus();
