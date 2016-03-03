@@ -2,7 +2,7 @@
   "name": "Timestamp Convertor",
   "description": "时间戳转换",
   "version": "1.0",
-  "homepage_url": "https://github.com/wanbei/TimeStampConvert",
+  "homepage_url": "https://github.com/wanbei/TimestampConvertor/blob/master/README.md",
   "icons": {
     "16":"icon_16.png",
     "32":"icon_32.png",
