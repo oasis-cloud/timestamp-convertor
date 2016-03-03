@@ -56,7 +56,7 @@ window.onload = function(){
 			this.$outputtime.value = date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
 		}
 		timeConvert.prototype.renderTimeStamp = function() {
-			var date, matchRes = this.$inputtime1.value.match(/^([0-9]{4})\/([0-9]{1,2})\/([0-9]{1,2})\s+([0-9]{2}):([0-9]{2}):([0-9]{2})$/);
+			var date, matchRes = this.$inputtime1.value.match(/^([0-9]{4})\/([0-9]{1,2})\/([0-9]{1,2})\s+([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2})$/);
 			
 			if(!matchRes || matchRes.length != 7 || Number(matchRes[1]) < 1000 || Number(matchRes[2]) > 12 || Number(matchRes[2]) <= 0 || Number(matchRes[3]) > 31 || Number(matchRes[3]) == 0 || Number(matchRes[4]) > 24 || Number(matchRes[5]) > 59 || Number(matchRes[6]) > 59) {
 				this.$err1.style.display = "inline-block";
