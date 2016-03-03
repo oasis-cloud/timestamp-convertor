@@ -1,4 +1,4 @@
-# TimeStampConvert -- Chrome扩展 时间戳转换工具
+# Timestamp Convertor -- Chrome扩展 时间戳转换器
 
 TimeStampConvert 是一款基于Chrome浏览器开发的时间戳转换扩展。
 
