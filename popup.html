@@ -40,7 +40,7 @@
 		margin: 5px 0;
 		text-align: center;
 	}
-	#submit{
+	#submit, #submit1{
 		border: 0;
 		padding: 3px;
 		width: 32px;
@@ -56,6 +56,9 @@
 		font-size: bold;
 		margin-left:5px;
 	}
+	.row-space{
+		margin-top: 40px;
+	}
 	</style>
 </head>
 <body>
@@ -69,8 +72,21 @@
 		</div>
 		<div class="row">
 			<div class="input-name">转换结果&nbsp;:&nbsp;</div>
-			<div class="input-wrap"><input id="outputtime" type="text" placeholder="人类可读时间" value="" /></div>
+			<div class="input-wrap"><input id="outputtime" type="text" placeholder="人类时间" value="" /></div>
 		</div>
+
+		<div class="row row-space">
+			<div class="input-name">人类时间&nbsp;:&nbsp;</div>
+			<div class="input-wrap"><input id="inputtime1" type="text" placeholder="输入人类时间" value="" /><span id="err1" class="err">X</span></div>
+		</div>
+		<div class="row">
+			<div class="input-submit"><input id="submit1" type="submit" value="" /></div>
+		</div>
+		<div class="row">
+			<div class="input-name">转换结果&nbsp;:&nbsp;</div>
+			<div class="input-wrap"><input id="outputtime1" type="text" placeholder="Unix时间戳" value="" /></div>
+		</div>
+		
 	</div>
 	<script type="text/javascript" src="convert.js"></script>
 </body>
