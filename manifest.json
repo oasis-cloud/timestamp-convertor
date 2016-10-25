@@ -4,8 +4,6 @@
   "version": "1.0",
   "homepage_url": "https://github.com/wanbei/TimestampConvertor/blob/master/README.md",
   "icons": {
-    "16":"icon_16.png",
-    "32":"icon_32.png",
     "48":"icon_48.png",
     "128":"icon_128.png"
   },
