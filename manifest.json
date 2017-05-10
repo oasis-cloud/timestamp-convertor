@@ -11,7 +11,7 @@
     "activeTab"
   ],
   "browser_action": {
-    "default_icon": "icon.png",
+    "default_icon": "icon_128.png",
     "default_title": "时间戳转换",
     "default_popup": "popup.html"
   },

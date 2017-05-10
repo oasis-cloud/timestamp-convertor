@@ -3,91 +3,50 @@
 <head>
 	<meta charset="UTF-8">
 	<title>时间戳转换</title>
+	<script type="text/javascript" src="./js/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="./js/semantic.js"></script>
+	<script type="text/javascript" src="./js/vue.csp.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/semantic.css">
 	<style type="text/css">
-	*{
-		margin:0;
-		padding:0;
-		font-family: "microsoft yahei";
-		font-size: 14px;
-	}
-	.w{
-		width: 300px;
-		padding: 20px 10px;
-	}
-	.row{
-		width: 295px;
-		margin: 0 auto;
-	}
-	.row:after{
-		content: "";
-		display: block;
-		font-size: 0;
-		clear: both;
-	}
-	.input-name, .input-wrap{
-		float: left;
-	}
-	.input-name{
-		width: 90px;
-		height: 23px;
-		line-height: 23px;
-		text-align: right;
-	}
-	.input-wrap input{
-		width: 186px;
-	}
-	.input-submit{
-		margin: 5px 0;
-		text-align: center;
-	}
-	#submit, #submit1{
-		border: 0;
-		padding: 3px;
-		width: 32px;
-		height: 32px;
-		background: url(./i/convert_32.png) no-repeat center;
-	}
-	.err{
-		display: none;
-		font-size: 14px;
-		line-height: 23px;
-		height: 23px;
-		color: #F00;
-		font-size: bold;
-		margin-left:5px;
-	}
-	.row-space{
-		margin-top: 40px;
-	}
+		body{
+			height: 250px;
+			width:250px;
+		}
 	</style>
 </head>
 <body>
-	<div class="w">
-		<div class="row">
-			<div class="input-name">Unix时间戳&nbsp;:&nbsp;</div>
-			<div class="input-wrap"><input id="inputtime" type="text" placeholder="输入Unix时间戳" value="" /><span class="err">X</span></div>
+<div class="ui container" style="margin-top: -1px;">
+	<div class="ui attached segment">
+		<div class="ui form">
+			<div class="fields">
+				<div class="ui field">
+					<label>Input<i class="info circle icon input-timestamp"></i></label>
+					<input id="js-input" type="text" placeholder="Input">
+				</div>
+				<div class="ui popup timestamp">
+					<h5>请键入时间戳或时间</h5>
+					<p>时间戳格式：xxxxxxxxxx，长度：10</p>
+					<p>时间格式：xxxx-xx-xx xx:xx:xx，顺序：年月日 时分秒</p>
+				</div>
+			</div>
 		</div>
-		<div class="row">
-			<div class="input-submit"><input id="submit" type="submit" value="" /></div>
-		</div>
-		<div class="row">
-			<div class="input-name">转换结果&nbsp;:&nbsp;</div>
-			<div class="input-wrap"><input id="outputtime" type="text" placeholder="人类时间" value="" /></div>
-		</div>
-
-		<div class="row row-space">
-			<div class="input-name">人类时间&nbsp;:&nbsp;</div>
-			<div class="input-wrap"><input id="inputtime1" type="text" placeholder="输入人类时间" value="" /><span id="err1" class="err">X</span></div>
-		</div>
-		<div class="row">
-			<div class="input-submit"><input id="submit1" type="submit" value="" /></div>
-		</div>
-		<div class="row">
-			<div class="input-name">转换结果&nbsp;:&nbsp;</div>
-			<div class="input-wrap"><input id="outputtime1" type="text" placeholder="Unix时间戳" value="" /></div>
-		</div>
-		
 	</div>
-	<script type="text/javascript" src="convert.js"></script>
+	<div class="ui attached segment">
+		<div class="ui form">
+			<div class="fields">
+				<div class="ui field">
+					<label>Output<i class="info circle icon output-datetime"></i></label>
+					<input id="js-output" type="text" placeholder="Input">
+				</div>
+				<div class="ui popup datetime">
+					<div class="header">输出格式</div>
+					<p>格式：xxxx-xx-xx xx:xx:xx，顺序：年月日 时分秒</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="./js/pop.js"></script>
+<script type="text/javascript" src="./js/convert.js"></script>
 </body>
 </html>
